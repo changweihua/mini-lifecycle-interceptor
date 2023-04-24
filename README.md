@@ -1,8 +1,10 @@
-# mini-lifecycle-interceptor
+# wx-lifecycle-interceptor
 
 [![en](https://img.shields.io/badge/en-English-blue)](https://github.com/yangger6/mini-lifecycle-interceptor/blob/main/README_EN.md)
 
 小程序生命周期方法拦截器
+
+**解决拦截组件导致原有 lifetimes methods 失效的问题**
 
 
 ## 特性

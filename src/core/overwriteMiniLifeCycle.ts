@@ -62,6 +62,7 @@ export function overwriteComponent(this: IMiniLifeCycle, options: any) {
     return
   }
   // ========== 微信小程序特殊处理开始 ==========
+  console.log('微信小程序特殊处理开始')
   let needOverwriteLifetimes = false // 是否要覆盖写入lifetimes字段
   let optionsOrLifeTimes: any
   if (miniLifeCycleInstance.env === 'weapp') {
@@ -70,9 +71,9 @@ export function overwriteComponent(this: IMiniLifeCycle, options: any) {
     if (compareVersion(currentVersion, '2.2.3') >= 0) {
       // 所以这里要对 lifetimes 做适配
       if (!options.lifetimes) {
+        needOverwriteLifetimes = true
         options.lifetimes = {}
       }
-      needOverwriteLifetimes = true
       optionsOrLifeTimes = options.lifetimes
     }
   } else {
@@ -86,7 +87,7 @@ export function overwriteComponent(this: IMiniLifeCycle, options: any) {
     if (needOverwriteLifetimes) {
       // 把原本的生命周期方法写入 lifetimes
       // eslint-disable-next-line @typescript-eslint/no-empty-function
-      optionsOrLifeTimes[currentLifecycleFunctionName] = options[currentLifecycleFunctionName] || function () {}
+      optionsOrLifeTimes[currentLifecycleFunctionName] = options[currentLifecycleFunctionName] || function () { }
       // 防止重复调用 删除原来的
       delete options[currentLifecycleFunctionName]
     }

@@ -82,8 +82,8 @@ class MiniLifeCycle implements IMiniLifeCycle {
         },
       },
     ) as {
-      [key in IMiniProgramComponentLifecyclePublicKeys | IMiniProgramPageLifecyclePublicKeys]: InterceptorManager
-    }
+        [key in IMiniProgramComponentLifecyclePublicKeys | IMiniProgramPageLifecyclePublicKeys]: InterceptorManager
+      }
     this.isInitSuccess = true
   }
 

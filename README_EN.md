@@ -1,9 +1,10 @@
-# mini-lifecycle-interceptor
+# wx-lifecycle-interceptor
 
 [![zh-cn](https://img.shields.io/badge/zh--cn-%E4%B8%AD%E6%96%87-yellow)](https://github.com/yangger6/mini-lifecycle-interceptor/blob/main/README.md)
 
 Mini Program lifeCycle interceptor
 
+**fix when component intercepted, it's origin lifetimes methods lost**
 
 ## Features
 
